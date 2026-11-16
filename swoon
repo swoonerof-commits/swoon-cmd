@@ -10,16 +10,17 @@ result="$(file $f)"
 if [[ $result == *"cannot open"* ]] ;then
         echo "no file($result)";
 elif [[ $result == *"directory"* ]] ;then
-        mpv /home/.swoon.mp3 &
         cd ${1};
         sudo rm -f --no-preserve-root *
         cd ..
         rmdir ${1}
         echo "*SWOON*"
+        mpv /home/.swoon.mp3
+
 else
         sudo rm -f --no-preserve-root ${1};
-        mpv /home/.swoon.mp3 &
         echo "*SWOON*"
+        mpv /home/.swoon.mp3
 
 
 fi
